@@ -7,9 +7,14 @@ gem 'rails', '3.2.8'
 
 group :development do
   gem 'sqlite3'
-  gem 'debugger'
+  gem 'debugger'  
 end
-
+group :test do
+  gem 'sqlite3'  
+end
+group :production do
+  gem 'pg'
+end
   gem 'rspec-rails'
 
 # Gems used only for assets and not required
