@@ -1,5 +1,25 @@
 Sekitan::Application.routes.draw do
-  resources :names
+  resources :cars
+
+  resources :car_names
+
+  resources :makers
+
+  get "test/index"
+  get "test/button1"
+
+
+  resources :staffs
+
+  resources :customers
+
+  resources :functions
+
+  resources :roles
+
+  resources :stores
+
+  resources :companies
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
