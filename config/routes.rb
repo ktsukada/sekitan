@@ -1,7 +1,15 @@
 Sekitan::Application.routes.draw do
+  get "htmltest/index"
+
+  get "jstest/index"
+
   resources :cars
 
-  resources :car_names
+#  resources :car_names
+
+  get "car_names/index"
+  get "car_names/search"
+post "car_names/search"
 
   resources :makers
 

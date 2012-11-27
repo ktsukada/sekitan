@@ -2,13 +2,17 @@ class CarNamesController < ApplicationController
   # GET /car_names
   # GET /car_names.json
   def index
-    @car_names = CarName.all
+    @maker = Maker.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @car_names }
     end
   end
+
+def search  
+    @maker = Maker.find(params[:makerid])
+end
 
   # GET /car_names/1
   # GET /car_names/1.json

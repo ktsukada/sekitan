@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>メーカー</th>
+    <th>車種名</th>
+    <th>登録数</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @maker.car_names.each do |car_name| %>
+  <tr>
+    <td><%= car_name.maker.name %></td>
+    <td><%= car_name.name %></td>
+    <td><%= car_name.cars.size %></td>
+    <td><%= link_to 'Show', car_name %></td>
+    <td><%= link_to 'Edit', edit_car_name_path(car_name) %></td>
+    <td><%= link_to 'Destroy', car_name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
