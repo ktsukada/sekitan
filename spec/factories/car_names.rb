@@ -18,13 +18,8 @@ sequence(:honda_carname_string) { |n| "ホンダ車種名#{n}" }
   end
 
    factory :honda_carname , :class => CarName do
-    maker_id 1
+    maker_id 3
     name { FactoryGirl.generate(:honda_carname_string) }
-  end
-
-  factory :testcarname , :class => CarName do
-    association :maker, factory: :mitsubishi
-    name "パジェロ"
   end
  
   factory :pajero , :class => CarName do

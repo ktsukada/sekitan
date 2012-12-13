@@ -1,26 +1,29 @@
-<h1>Listing cars</h1>
+<h1>車両</h1>
 
 <table>
   <tr>
-    <th>Maker</th>
-    <th>Car name</th>
-    <th>Grade</th>
+    <th>イメージ</th>
+    <th>メーカー</th>
+    <th>車種名</th>
+    <th>グレード</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @cars.each do |car| %>
-  <tr>
-    <td><%= car.maker_id %></td>
-    <td><%= car.car_name_id %></td>
+  <tr class="<%=cycle('list_line_odd', 'list_line_even')  %>">
+    <td><%= image_tag car.image1, :class => 'list_image' %></td>
+    <td><%= car.maker.name %></td> 
+    <td><%= car.car_name.name %></td>
     <td><%= car.grade %></td>
-    <td><%= link_to 'Show', car %></td>
-    <td><%= link_to 'Edit', edit_car_path(car) %></td>
-    <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', car %><br>
+    <%= link_to 'Edit', edit_car_path(car) %><br>
+    <%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
+  <%= paginate @cars %>  
 
 <br />
 

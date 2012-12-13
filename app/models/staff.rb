@@ -5,4 +5,7 @@ class Staff < ActiveRecord::Base
 	has_many :roles
 	has_many :customers
 
+	validates_presence_of :name, :password, :login_id
+	validates_confirmation_of :passwords
+
 end

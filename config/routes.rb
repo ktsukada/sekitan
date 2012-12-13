@@ -5,8 +5,12 @@ Sekitan::Application.routes.draw do
 
   resources :cars
 
-  resources :car_names
-  post "car_names/search"
+  resources :car_names do
+    collection do 
+      post :search
+      get :search
+    end
+  end
 
   resources :makers
 

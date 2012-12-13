@@ -1,8 +1,8 @@
-<h1>車種名メンテナンス</h1>
+<h1>車種名</h1>
 
-
-<%= form_tag({:action => 'search'}, :remote => true ) do %> 
+<%= form_tag({:action => 'search', :page => 1 }, :remote => true ) do %> 
 <%= select_tag 'makerid', options_from_collection_for_select(@maker, :id, :name) %>
+<%= text_field_tag 'words' %>
 <%= submit_tag '検索' %>
 <% end %>
   

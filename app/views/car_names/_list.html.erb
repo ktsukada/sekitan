@@ -7,7 +7,7 @@
     <th></th>
     <th></th>
   </tr>
-    <% @maker.car_names.each do |car_name| %>
+    <% @car_names.each do |car_name| %>
   <tr>
     <td><%= car_name.maker.name %></td>
     <td><%= car_name.name %></td>
@@ -17,4 +17,7 @@
     <td><%= link_to 'Destroy', car_name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+<tr>
+</tr>
 </table>
+  <%= paginate @car_names, :remote => true  %>  
