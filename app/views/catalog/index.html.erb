@@ -1,0 +1,24 @@
+<h1>新車カタログ</h1>
+
+<table>
+  <tr>
+    <th>イメージ</th>
+    <th>メーカー</th>
+    <th>車種名</th>
+    <th>グレード</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cars.each do |car| %>
+  <tr class="<%=cycle('list_line_odd', 'list_line_even')  %>">
+    <td><%= image_tag car.image1, :class => 'list_image' %></td>
+    <td><%= car.maker.name %></td> 
+    <td><%= car.car_name.name %></td>
+    <td><%= car.grade %></td>
+    <td><%= link_to 'Show', car %><br>
+  </tr>
+<% end %>
+</table>
+  <%= paginate @cars %>  

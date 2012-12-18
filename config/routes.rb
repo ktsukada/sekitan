@@ -1,4 +1,13 @@
-Sekitan::Application.routes.draw do
+Sekitan::Application.routes.draw do  
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  devise_for :users
+
+  get "catalog/index"
+
+  get "top/index"
+
   get "htmltest/index"
 
   get "jstest/index"
@@ -80,6 +89,8 @@ Sekitan::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+
+  root :to => 'top#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -34,6 +34,9 @@ gem 'jquery-rails'
 
 gem 'kaminari'
 
+gem 'devise', '>= 0'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -48,3 +51,6 @@ gem 'kaminari'
 
 # To use debugger
 # gem 'debugger'
+
+
+gem "devise"
