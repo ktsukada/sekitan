@@ -8,7 +8,6 @@ gem 'rails', '3.2.8'
 group :development do
   gem 'sqlite3' 
   gem 'debugger'
-  gem 'factory_girl_rails'
   gem 'rails-erd'
 end
 group :test do
@@ -30,6 +29,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'factory_girl_rails'
 gem 'jquery-rails'
 gem 'rspec-rails'
 gem 'kaminari'
