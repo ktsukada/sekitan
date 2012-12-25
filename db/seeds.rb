@@ -12,39 +12,32 @@ require 'factory_girl'
 Maker.delete_all
 CarName.delete_all
 Car.delete_all
+Role.delete_all
 
+# maker
 FactoryGirl.create(:mitsubishi)
 FactoryGirl.create(:toyota)
 FactoryGirl.create(:honda)
 
+# car_name
 FactoryGirl.create(:pajero)
 FactoryGirl.create(:delica)
-
 FactoryGirl.create(:prius)
 FactoryGirl.create(:alion)
-
 FactoryGirl.create(:insight)
-
 FactoryGirl.create_list(:mitsubishi_carname,5)
 FactoryGirl.create_list(:toyota_carname,5)
 FactoryGirl.create_list(:honda_carname,5)
 
+# car
 FactoryGirl.create_list(:pajero_car,30)
 FactoryGirl.create_list(:delica_car,30)
 FactoryGirl.create_list(:prius_car,30)
 FactoryGirl.create_list(:insight_car,30)
 
-FactoryGirl.create_list(:insight_car,30)
+# role
+FactoryGirl.create(:role_system_admin)
+FactoryGirl.create(:role_admin)
+FactoryGirl.create(:role_headquarter)
+FactoryGirl.create(:role_staff)
 
-# Maker.create! do |t|
-#   t.name = '三菱'
-# end
-# Maker.create! do |t|
-#   t.name = 'トヨタ'
-# end
-# Maker.create! do |t|
-#   t.name = 'ホンダ'
-# end
-# Maker.create! do |t|
-#   t.name = 'スズキ'
-# end

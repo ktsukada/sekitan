@@ -1,6 +1,5 @@
 class Role < ActiveRecord::Base
-  attr_accessible :function_id, :staff_id
+  attr_accessible :name
 
-  belongs_to :staff
-  
+  belongs_to :user
 end

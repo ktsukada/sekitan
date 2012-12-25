@@ -1,9 +1,14 @@
 Sekitan::Application.routes.draw do  
 
+
+  
+
+  
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :users
-
+  
   get "catalog/index"
 
   get "top/index"
@@ -30,10 +35,6 @@ Sekitan::Application.routes.draw do
   resources :staffs
 
   resources :customers
-
-  resources :functions
-
-  resources :roles
 
   resources :stores
 

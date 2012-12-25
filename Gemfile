@@ -9,6 +9,7 @@ group :development do
   gem 'sqlite3' 
   gem 'debugger'
   gem 'factory_girl_rails'
+  gem 'rails-erd'
 end
 group :test do
   gem 'sqlite3'  
@@ -16,7 +17,6 @@ end
 group :production do
   gem 'pg'
 end
-  gem 'rspec-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,10 +31,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'rspec-rails'
 gem 'kaminari'
-
 gem 'devise', '>= 0'
+gem 'cancan'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 # To use ActiveModel has_secure_password
@@ -51,6 +51,3 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 # To use debugger
 # gem 'debugger'
-
-
-gem "devise"
