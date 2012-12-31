@@ -1,0 +1,22 @@
+<div class="nav-collapse collapse">
+	<ul class="nav">
+		<li>
+			<%= link_to "Home", root_path %>
+		</li>
+		<li>
+			<%= link_to "カタログ", catalog_index_path %>
+		</li>
+		<li>
+			<%= link_to "提案書", root_path %>
+		</li>
+	</ul>
+	<p class="navbar-text">
+	  <% if user_signed_in? %>
+        	<%=current_user.account %>. 
+	    <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+	  <% else %>
+	    <%= link_to('Login', new_user_session_path) %>
+	  <% end %>
+	          </p>
+
+</div>

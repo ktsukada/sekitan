@@ -3,7 +3,7 @@
 <%= form_tag({:action => 'search', :page => 1 }, :remote => true ) do %> 
 <%= select_tag 'makerid', options_from_collection_for_select(@maker, :id, :name) %>
 <%= text_field_tag 'words' %>
-<%= submit_tag '検索' %>
+<%= submit_tag '検索' , :class => 'btn btn-info' %>
 <% end %>
   
 <div id="search-result"></div>

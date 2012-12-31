@@ -1,29 +1,12 @@
-<%= form_for(@car) do |f| %>
-  <% if @car.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
+<%= simple_form_for(@car) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @car.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :maker_id %><br />
-    <%= f.text_field :maker_id %>
+  <div class="form-inputs">
+    <%= f.association :maker, :collection => @makers, :prompt => '-' %>
+    <%= f.association :car_name, :collection => @car_names, :prompt => '-' %>
+    <%= f.input :grade %>
   </div>
-  <div class="field">
-    <%= f.label :car_name_id %><br />
-    <%= f.text_field :car_name_id %>
-  </div>
-  <div class="field">
-    <%= f.label :grade %><br />
-    <%= f.text_field :grade %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div  class="form-inputs">
+    <%= f.button :submit, :disable_width => '送信中...' %>
   </div>
 <% end %>

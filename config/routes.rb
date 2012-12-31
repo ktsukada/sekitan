@@ -27,8 +27,6 @@ Sekitan::Application.routes.draw do
   end
 
   resources :makers
-
-  get "test/index"
   get "test/button1"
 
 

@@ -25,6 +25,7 @@ class CustomersController < ApplicationController
   # GET /customers/new.json
   def new
     @customer = Customer.new
+    @staffs = Staff.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class CustomersController < ApplicationController
   # GET /customers/1/edit
   def edit
     @customer = Customer.find(params[:id])
+    @staffs = Staff.all
   end
 
   # POST /customers

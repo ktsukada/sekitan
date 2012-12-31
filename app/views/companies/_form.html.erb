@@ -1,37 +1,13 @@
-<%= form_for(@company) do |f| %>
-  <% if @company.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+<%= simple_form_for(@company) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @company.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :tel_no %><br />
-    <%= f.text_field :tel_no %>
-  </div>
-  <div class="field">
-    <%= f.label :start_at %><br />
-    <%= f.date_select :start_at %>
-  </div>
-  <div class="field">
-    <%= f.label :end_at %><br />
-    <%= f.date_select :end_at %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :tel_no %>
+    <%= f.input :start_at %>
+    <%= f.input :end_at %>
+  <div class="form-inputs">
+    <%= f.button :submit ,:disable_with => '送信中...'%>
   </div>
 <% end %>

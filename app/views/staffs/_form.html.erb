@@ -1,46 +1,13 @@
-<%= form_for(@staff) do |f| %>
-  <% if @staff.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
-
-      <ul>
-      <% @staff.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for(@staff) do |f| %>
+  <%= f.error_notification %>
 
   <div class="field">
-    <%= f.label :store_id %><br />
-    <%= f.collection_select :store_id , @stores, :id, :name ,:prompt => '選択してください' %>
-
+    <%= f.association :store , :collection => @stores, :prompt => '-' %>
+    <%= f.input :name %>
+    <%= f.input :birthday %>
+    <%= f.input :tel_no %>
   </div>
-  <div class="field">
-    <%= f.label :login_id %><br />
-    <%= f.text_field :login_id %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :birthday %><br />
-    <%= f.date_select :birthday %>
-  </div>
-  <div class="field">
-    <%= f.label :tel_no %><br />
-    <%= f.text_field :tel_no %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div  class="form-inputs">
+    <%= f.button :submit, :disable_with => '送信中...' %>
   </div>
 <% end %>

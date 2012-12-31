@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sekitan</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<header>
+	<% if user_signed_in? %>
+	<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+	<% else %>
+	<%= link_to "ログイン", new_user_session_path %>
+	<% end %>
+</header>
+
+<body class='<%= controller .controller_name %>'>
+
+
+
+
+
+<div id="columns">
+
+<div id="side">
+	<ul>
+		<li><%= link_to 'maker', makers_path %></li>
+		<li><%= link_to 'car_name', car_names_path %></li>
+		<li><%= link_to 'car', cars_path %></li>
+		<li><%= link_to 'company', companies_path %></li>
+		<li><%= link_to 'store', stores_path %></li>
+	</ul>
+</div>
+
+<div id="content">
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+	
+	<%= yield %>
+
+	<div id='progress'></div>
+</div>
+</div>
+
+</body>
+<footer>
+	copyright 2012
+</footer>
+</html>

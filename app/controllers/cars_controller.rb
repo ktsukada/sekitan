@@ -25,6 +25,8 @@ class CarsController < ApplicationController
   # GET /cars/new.json
   def new
     @car = Car.new
+    @makers = Maker.all
+    @car_names = CarName.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +37,8 @@ class CarsController < ApplicationController
   # GET /cars/1/edit
   def edit
     @car = Car.find(params[:id])
+    @makers = Maker.all
+    @car_names = CarName.all
   end
 
   # POST /cars
