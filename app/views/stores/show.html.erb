@@ -1,24 +1,29 @@
-<p>
-  <b>Company:</b>
-  <%= @store.company_id	 %>
-</p>
+<%- model_class = Store -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @store.name %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @store.address %>
-</p>
-
-<p>
-  <b>Tel no:</b>
-  <%= @store.tel_no %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
+  <dd><%= @store.company_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @store.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address1) %>:</strong></dt>
+  <dd><%= @store.address1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address2) %>:</strong></dt>
+  <dd><%= @store.address2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tel_no) %>:</strong></dt>
+  <dd><%= @store.tel_no %></dd>
+</dl>
 
 <div class="form-actions">
-	<%= link_to 'Edit', edit_store_path(@store), :class => 'btn' %>
-	<%= link_to 'Back', stores_path, :class => 'btn' %>
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              stores_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_store_path(@store), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              store_path(@store),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
 </div>

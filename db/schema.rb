@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121230193437) do
+ActiveRecord::Schema.define(:version => 20121216052517) do
 
   create_table "car_names", :force => true do |t|
     t.integer  "maker_id"
@@ -23,23 +23,24 @@ ActiveRecord::Schema.define(:version => 20121230193437) do
   create_table "cars", :force => true do |t|
     t.integer  "maker_id"
     t.integer  "car_name_id"
-    t.string   "grade"
+    t.string   "grade1"
+    t.string   "grade2"
     t.integer  "price"
-    t.date     "saled_at"
+    t.date     "sale_start_at"
+    t.date     "sale_end_at"
     t.string   "notes"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
     t.string   "image1"
     t.string   "image2"
     t.string   "image3"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "companies", :force => true do |t|
     t.string   "name"
-    t.string   "address"
+    t.string   "address1"
+    t.string   "address2"
     t.string   "tel_no"
-    t.date     "start_at"
-    t.date     "end_at"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -47,9 +48,10 @@ ActiveRecord::Schema.define(:version => 20121230193437) do
   create_table "customers", :force => true do |t|
     t.string   "name"
     t.integer  "staff_id"
-    t.date     "first_year"
-    t.integer  "run"
-    t.date     "shaken"
+    t.date     "tel_no"
+    t.string   "address1"
+    t.string   "address2"
+    t.date     "birth_day"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -73,19 +75,8 @@ ActiveRecord::Schema.define(:version => 20121230193437) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
-  create_table "roles", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "staffs", :force => true do |t|
     t.integer  "store_id"
-    t.string   "login_id"
-    t.string   "password"
-    t.string   "name"
-    t.date     "birthday"
-    t.string   "tel_no"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -93,28 +84,17 @@ ActiveRecord::Schema.define(:version => 20121230193437) do
   create_table "stores", :force => true do |t|
     t.integer  "company_id"
     t.string   "name"
-    t.string   "address"
+    t.string   "address1"
+    t.string   "address2"
     t.string   "tel_no"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "testtests", :force => true do |t|
-    t.string   "name"
-    t.integer  "num"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "testtesttests", :force => true do |t|
-    t.string   "name"
-    t.integer  "num"
-    t.date     "at"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
+    t.string   "account",                                :null => false
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
@@ -135,15 +115,11 @@ ActiveRecord::Schema.define(:version => 20121230193437) do
     t.string   "authentication_token"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "account"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "role_id"
   end
 
+  add_index "users", ["account"], :name => "index_users_on_account", :unique => true
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true
 

@@ -1,9 +1,6 @@
-<h3>Editing staff</h3>
-<hr>
-
-<%= render 'form' %>
-
-<div class="form-actions">
-	<%= link_to 'Show', @staff, :class => 'btn' %> 
-	<%= link_to 'Back', staffs_path, :class => 'btn' %>
+<%- model_class = Staff -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
+                                   :default => "Edit #{model_class.model_name.human}") %></h1>
 </div>
+<%= render :partial => 'form' %>

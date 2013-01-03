@@ -3,9 +3,10 @@ class CreateCustomers < ActiveRecord::Migration
     create_table :customers do |t|
       t.string :name
       t.references :staff
-      t.date :first_year
-      t.integer :run
-      t.date :shaken
+      t.date :tel_no
+      t.string :address1
+      t.string :address2
+      t.date :birth_day
 
       t.timestamps
     end

@@ -1,10 +1,5 @@
 Sekitan::Application.routes.draw do  
 
-
-  
-
-  
-
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :users
@@ -12,10 +7,6 @@ Sekitan::Application.routes.draw do
   get "catalog/index"
 
   get "top/index"
-
-  get "htmltest/index"
-
-  get "jstest/index"
 
   resources :cars
 
@@ -27,8 +18,6 @@ Sekitan::Application.routes.draw do
   end
 
   resources :makers
-  get "test/button1"
-
 
   resources :staffs
 
@@ -37,6 +26,8 @@ Sekitan::Application.routes.draw do
   resources :stores
 
   resources :companies
+
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

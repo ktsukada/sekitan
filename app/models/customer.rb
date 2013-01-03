@@ -1,5 +1,4 @@
 class Customer < ActiveRecord::Base
-  attr_accessible :first_year, :name, :run, :shaken, :staff_id
-
   belongs_to :staff
+  attr_accessible :address1, :address2, :birth_day, :name, :tel_no
 end

@@ -1,39 +1,21 @@
-<p>
-  <b>Store:</b>
-  <%= @staff.store_id %>
-</p>
+<%- model_class = Staff -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Role:</b>
-  <%= @staff.role_id %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @staff.user_id %>
-</p>
-
-<p>
-  <b>Password:</b>
-  <%= @staff.password %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @staff.name %>
-</p>
-
-<p>
-  <b>Birthday:</b>
-  <%= @staff.birthday %>
-</p>
-
-<p>
-  <b>Tel no:</b>
-  <%= @staff.tel_no %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:store_id) %>:</strong></dt>
+  <dd><%= @staff.store_id %></dd>
+</dl>
 
 <div class="form-actions">
-  <%= link_to 'Edit', edit_staff_path(@staff), :class => 'btn' %>
-  <%= link_to 'Back', staffs_path, :class => 'btn' %>
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              staffs_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_staff_path(@staff), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              staff_path(@staff),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
 </div>

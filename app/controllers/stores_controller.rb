@@ -2,7 +2,7 @@ class StoresController < ApplicationController
   # GET /stores
   # GET /stores.json
   def index
-    @stores = Store.joins(:company)
+    @stores = Store.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class StoresController < ApplicationController
   # GET /stores/1.json
   def show
     @store = Store.find(params[:id])
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @store }
@@ -25,7 +25,6 @@ class StoresController < ApplicationController
   # GET /stores/new.json
   def new
     @store = Store.new
-    @companies = Company.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,7 +34,6 @@ class StoresController < ApplicationController
 
   # GET /stores/1/edit
   def edit
-    @companies = Company.all
     @store = Store.find(params[:id])
   end
 

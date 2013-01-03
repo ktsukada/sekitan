@@ -3,5 +3,4 @@ class Maker < ActiveRecord::Base
 
   has_many :car_names
   has_many :cars , :through => :car_names
-
 end

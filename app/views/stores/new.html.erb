@@ -1,8 +1,6 @@
-<h3>New store</h3>
-<hr>
-
-<%= render 'form' %>
-
-<div class="form-actions">
-	<%= link_to 'Back', stores_path, :class => 'btn' %>
+<%- model_class = Store -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
+                                 :default => "New #{model_class.model_name.human}") %></h1>
 </div>
+<%= render :partial => 'form' %>

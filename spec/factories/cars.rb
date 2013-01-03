@@ -2,8 +2,21 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
+  factory :car do
+    maker nil
+    car_name nil
+    grade1 "MyString"
+    grade2 "MyString"
+    price 1
+    sale_start_at "2013-01-04"
+    sale_end_at "2013-01-04"
+    notes "MyString"
+    image1 "MyString"
+    image2 "MyString"
+    image3 "MyString"
+  end
 
-sequence(:grade_string) { |n| "グレード#{n}" }
+  sequence(:grade_string) { |n| "グレード#{n}" }
 
   factory :pajero_car  , :class => Car do
     maker_id 1

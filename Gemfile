@@ -9,6 +9,7 @@ group :development do
   gem 'sqlite3' 
   gem 'debugger'
   gem 'rails-erd'
+  gem 'twitter-bootstrap-rails'
 end
 group :test do
   gem 'sqlite3'  
@@ -22,9 +23,9 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  #gem 'bootstrap-sass-rails'
   gem 'bootstrap-sass'
-  #gem 'twitter-bootstrap-rails'
+  gem 'bootswatch-rails'
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

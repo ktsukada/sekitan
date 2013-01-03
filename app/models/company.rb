@@ -1,5 +1,5 @@
 class Company < ActiveRecord::Base
-  attr_accessible :address, :end_at, :name, :start_at, :tel_no
+  attr_accessible :address1, :address2, :name, :tel_no
 
   has_many :stores
 end

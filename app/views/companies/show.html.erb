@@ -1,29 +1,27 @@
-<p>
-  <b>Name:</b>
-  <%= @company.name %>
-</p>
+<%- model_class = Company -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Address:</b>
-  <%= @company.address %>
-</p>
-
-<p>
-  <b>Tel no:</b>
-  <%= @company.tel_no %>
-</p>
-
-<p>
-  <b>Start at:</b>
-  <%= @company.start_at %>
-</p>
-
-<p>
-  <b>End at:</b>
-  <%= @company.end_at %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @company.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address1) %>:</strong></dt>
+  <dd><%= @company.address1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address2) %>:</strong></dt>
+  <dd><%= @company.address2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tel_no) %>:</strong></dt>
+  <dd><%= @company.tel_no %></dd>
+</dl>
 
 <div class="form-actions">
-  <%= link_to 'Edit', edit_company_path(@company),:class => 'btn' %>
-  <%= link_to 'Back', companies_path, :class => 'btn' %>
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              companies_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_company_path(@company), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              company_path(@company),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
 </div>

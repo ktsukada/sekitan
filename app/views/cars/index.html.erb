@@ -1,33 +1,56 @@
-<h3>車両</h3>
-<hr>
-
-<table class='table table-hover table-striped'>
-  <tr>
-    <th>イメージ</th>
-    <th>メーカー</th>
-    <th>車種名</th>
-    <th>グレード</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @cars.each do |car| %>
-  <tr>
-    <td><%= image_tag car.image1, :class => 'list_image' %></td>
-    <td><%= car.maker.name %></td> 
-    <td><%= car.car_name.name %></td>
-    <td><%= car.grade %></td>
-    <td><%= link_to 'Show', car %><br>
-    <%= link_to 'Edit', edit_car_path(car) %><br>
-    <%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-  <%= paginate @cars %>  
-
-<br />
-
-<div class="form-actions">
-  <%= link_to 'New Car', new_car_path, :class => 'btn btn-primary' %>
+<%- model_class = Car -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:maker_id) %></th>
+      <th><%= model_class.human_attribute_name(:car_name_id) %></th>
+      <th><%= model_class.human_attribute_name(:grade1) %></th>
+      <th><%= model_class.human_attribute_name(:grade2) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:sale_start_at) %></th>
+      <th><%= model_class.human_attribute_name(:sale_end_at) %></th>
+      <th><%= model_class.human_attribute_name(:notes) %></th>
+      <th><%= model_class.human_attribute_name(:image1) %></th>
+      <th><%= model_class.human_attribute_name(:image2) %></th>
+      <th><%= model_class.human_attribute_name(:image3) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= link_to car.id, car_path(car) %></td>
+        <td><%= car.maker_id %></td>
+        <td><%= car.car_name_id %></td>
+        <td><%= car.grade1 %></td>
+        <td><%= car.grade2 %></td>
+        <td><%= car.price %></td>
+        <td><%= car.sale_start_at %></td>
+        <td><%= car.sale_end_at %></td>
+        <td><%= car.notes %></td>
+        <td><%= car.image1 %></td>
+        <td><%= car.image2 %></td>
+        <td><%= car.image3 %></td>
+        <td><%=l car.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_car_path(car), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      car_path(car),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_car_path,
+            :class => 'btn btn-primary' %>

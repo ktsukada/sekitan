@@ -25,7 +25,6 @@ class StaffsController < ApplicationController
   # GET /staffs/new.json
   def new
     @staff = Staff.new
-    @stores = Store.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,8 +35,6 @@ class StaffsController < ApplicationController
   # GET /staffs/1/edit
   def edit
     @staff = Staff.find(params[:id])
-    @stores = Store.all
-
   end
 
   # POST /staffs
