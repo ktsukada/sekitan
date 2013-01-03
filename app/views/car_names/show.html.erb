@@ -1,3 +1,4 @@
+<h3>車種名</h3>
 
 <p>
   <b>Maker:</b>
@@ -9,6 +10,7 @@
   <%= @car_name.name %>
 </p>
 
-
-<%= link_to 'Edit', edit_car_name_path(@car_name) %> |
-<%= link_to 'Back', car_names_path %>
+<div class="form-actions">
+	<%= link_to 'Edit', edit_car_name_path(@car_name), :class => 'btn' %>
+	<%= link_to 'Back', car_names_path, :class => 'btn' %>
+</div>

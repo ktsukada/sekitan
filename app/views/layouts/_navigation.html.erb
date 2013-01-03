@@ -1,6 +1,6 @@
-<div class="nav-collapse collapse">
-	<ul class="nav">
-		<li>
+<div class="nav-collapse">
+	<ul class="nav" >
+		<li class='active'>
 			<%= link_to "Home", root_path %>
 		</li>
 		<li>
@@ -10,7 +10,7 @@
 			<%= link_to "提案書", root_path %>
 		</li>
 	</ul>
-	<p class="navbar-text">
+	<p class="navbar-text pull-right">
 	  <% if user_signed_in? %>
         	<%=current_user.account %>. 
 	    <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>

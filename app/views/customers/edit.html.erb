@@ -1,6 +1,9 @@
-<h1>Editing customer</h1>
+<h3>Editing customer</h3>
+<hr>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @customer %> |
-<%= link_to 'Back', customers_path %>
+<div class="form-actions">
+	<%= link_to 'Show', @customer, :class => 'btn' %> |
+	<%= link_to 'Back', customers_path, :class => 'btn' %>
+</div>

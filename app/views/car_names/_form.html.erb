@@ -4,9 +4,6 @@
   <div class="form-inputs">
     <%= f.association :maker, :collection => @maker, :prompt => '-' %>
     <%= f.input :name %>
-
-  </div>
-  <div  class="form-inputs">
-    <%= f.button :submit, :disable_with => '送信中...' %>
+    <%= f.button :submit, :"data-loading-text"=> ('simple_form.creating') %>
   </div>
 <% end %>

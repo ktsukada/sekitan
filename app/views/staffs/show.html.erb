@@ -1,4 +1,3 @@
-
 <p>
   <b>Store:</b>
   <%= @staff.store_id %>
@@ -34,6 +33,7 @@
   <%= @staff.tel_no %>
 </p>
 
-
-<%= link_to 'Edit', edit_staff_path(@staff) %> |
-<%= link_to 'Back', staffs_path %>
+<div class="form-actions">
+  <%= link_to 'Edit', edit_staff_path(@staff), :class => 'btn' %>
+  <%= link_to 'Back', staffs_path, :class => 'btn' %>
+</div>

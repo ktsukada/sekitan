@@ -5,8 +5,6 @@
     <%= f.association :maker, :collection => @makers, :prompt => '-' %>
     <%= f.association :car_name, :collection => @car_names, :prompt => '-' %>
     <%= f.input :grade %>
-  </div>
-  <div  class="form-inputs">
-    <%= f.button :submit, :disable_width => '送信中...' %>
+    <%= f.button :submit %>
   </div>
 <% end %>

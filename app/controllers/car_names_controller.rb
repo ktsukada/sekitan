@@ -11,15 +11,9 @@ class CarNamesController < ApplicationController
   end
 
  def search  
-#     @maker = Maker.find(params[:makerid])
-#     if params[:words].size > 0     
-#         @car_name = @maker.car_names.where('name like "%?%"', params[:words])
-#     else
-#         @car_name = @maker.car_names.per()
-#     end
     @car_names = Maker.find(params[:makerid]).car_names
-    @car_names =  @car_names.where(["name like '%?%'", params[:words]]) if params[:words].present?
-    @car_names = @car_names.page(params[:page]).per(5)
+    @car_names = @car_names.where("name like ?", "%#{params[:words]}%") if params[:words].present?
+    @car_names = @car_names.page(params[:page]).per(20)
 end
 
   # GET /car_names/1

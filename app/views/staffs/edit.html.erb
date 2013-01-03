@@ -1,6 +1,9 @@
-<h1>Editing staff</h1>
+<h3>Editing staff</h3>
+<hr>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @staff %> |
-<%= link_to 'Back', staffs_path %>
+<div class="form-actions">
+	<%= link_to 'Show', @staff, :class => 'btn' %> 
+	<%= link_to 'Back', staffs_path, :class => 'btn' %>
+</div>

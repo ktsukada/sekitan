@@ -1,6 +1,9 @@
-<h1>Editing car</h1>
+<h3>Editing car</h3>
+<hr>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @car %> |
-<%= link_to 'Back', cars_path %>
+<div class="form-actions">
+	<%= link_to 'Show', @car, :class => 'btn' %>
+	<%= link_to 'Back', cars_path, :class => 'btn' %>
+</div>

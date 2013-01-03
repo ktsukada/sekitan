@@ -1,8 +1,8 @@
-<h1>車種名</h1>
-
-<%= form_tag({:action => 'search', :page => 1 }, :remote => true ) do %> 
+<h3>車種名</h3>
+<hr>
+<%= form_tag({:action => 'search', :page => 1 }, :remote => true, :class => 'form_search' ) do %> 
 <%= select_tag 'makerid', options_from_collection_for_select(@maker, :id, :name) %>
-<%= text_field_tag 'words' %>
+<%= text_field_tag :words, '',:class => 'search-query', :placeholder => '車種名'%>
 <%= submit_tag '検索' , :class => 'btn btn-info' %>
 <% end %>
   
@@ -10,4 +10,6 @@
 
 <br />
 
-<%= link_to 'New Car name', new_car_name_path %>
+<div class="form-actions">
+	<%= link_to '車種名を追加', new_car_name_path, :class => 'btn btn-primary' %>
+</div>
