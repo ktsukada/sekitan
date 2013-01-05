@@ -7,15 +7,13 @@ describe "users/show" do
       :first_name => "First Name",
       :last_name => "Last Name",
       :email => "Email",
-      :encrypted_password => "Encrypted Password",
-      :reset_password_token => "Reset Password Token",
-      :sign_in_count => "Sign In Count",
-      :current_sign_in_up => "Current Sign In Up",
-      :confirmation_token => "Confirmation Token",
-      :unconfirmed_email => "Unconfirmed Email",
-      :failed_attempts => 1,
-      :unlock_token => "Unlock Token",
-      :authentication_token => "Authentication Token"
+      :sign_in_count => 77,
+      :current_sign_in_at => "2013-01-05 08:00:00",
+      :last_sign_in_at => "2013-01-05 08:01:00",
+      :current_sign_in_ip => "Current Sign In Ip",
+      :last_sign_in_ip => "Last Sign in Ip",
+      :locked_at => "2013-01-05 08:03:00",
+      :failed_attempts => 88
     ))
   end
 
@@ -26,14 +24,12 @@ describe "users/show" do
     rendered.should match(/First Name/)
     rendered.should match(/Last Name/)
     rendered.should match(/Email/)
-    rendered.should match(/Encrypted Password/)
-    rendered.should match(/Reset Password Token/)
-    rendered.should match(/Sign In Count/)
-    rendered.should match(/Current Sign In Up/)
-    rendered.should match(/Confirmation Token/)
-    rendered.should match(/Unconfirmed Email/)
-    rendered.should match(/1/)
-    rendered.should match(/Unlock Token/)
-    rendered.should match(/Authentication Token/)
+    rendered.should match(/77/)
+    rendered.should match(/2013-01-05 08:00:00 UTC/)
+    rendered.should match(/2013-01-05 08:01:00 UTC/)
+    rendered.should match(/Current Sign In Ip/)
+    rendered.should match(/Last Sign in Ip/)
+    rendered.should match(/2013-01-05 08:03:00 UTC/)
+    rendered.should match(/88/)
   end
 end

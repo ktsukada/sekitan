@@ -7,7 +7,7 @@
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @customer.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:staff_id) %>:</strong></dt>
-  <dd><%= @customer.staff_id %></dd>
+  <dd><%= @customer.staff.full_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:tel_no) %>:</strong></dt>
   <dd><%= @customer.tel_no %></dd>
   <dt><strong><%= model_class.human_attribute_name(:address1) %>:</strong></dt>

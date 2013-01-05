@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:maker_id) %></th>
+      <th><%= model_class.human_attribute_name(:maker) %></th>
       <th><%= model_class.human_attribute_name(:car_name_id) %></th>
       <th><%= model_class.human_attribute_name(:grade1) %></th>
       <th><%= model_class.human_attribute_name(:grade2) %></th>
@@ -25,8 +25,8 @@
     <% @cars.each do |car| %>
       <tr>
         <td><%= link_to car.id, car_path(car) %></td>
-        <td><%= car.maker_id %></td>
-        <td><%= car.car_name_id %></td>
+        <td><%= car.car_name.maker.name %></td>
+        <td><%= car.car_name.name %></td>
         <td><%= car.grade1 %></td>
         <td><%= car.grade2 %></td>
         <td><%= car.price %></td>

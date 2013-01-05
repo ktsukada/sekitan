@@ -7,13 +7,15 @@ describe "companies/index" do
         :name => "Name",
         :address1 => "Address1",
         :address2 => "Address2",
-        :tel_no => "Tel No"
+        :tel_no => "Tel No",
+        :created_at => Time.now
       ),
       stub_model(Company,
         :name => "Name",
         :address1 => "Address1",
         :address2 => "Address2",
-        :tel_no => "Tel No"
+        :tel_no => "Tel No",
+        :created_at => Time.now
       )
     ])
   end

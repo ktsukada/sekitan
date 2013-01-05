@@ -2,6 +2,8 @@
 
 FactoryGirl.define do
   factory :staff do
+    user nil
     store nil
+    staff_no "MyString"
   end
 end

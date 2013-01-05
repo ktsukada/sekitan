@@ -4,8 +4,12 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @staff.full_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:store_id) %>:</strong></dt>
-  <dd><%= @staff.store_id %></dd>
+  <dd><%= @staff.store.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:staff_no) %>:</strong></dt>
+  <dd><%= @staff.staff_no %></dd>
 </dl>
 
 <div class="form-actions">

@@ -3,8 +3,9 @@ require 'spec_helper'
 describe "cars/show" do
   before(:each) do
     @car = assign(:car, stub_model(Car,
-      :maker => nil,
-      :car_name => nil,
+      :car_name => stub_model(CarName,
+                                :name => 'CarName',
+                                :maker => stub_model(Maker, :name => "MakerName")),
       :grade1 => "Grade1",
       :grade2 => "Grade2",
       :price => 1,
@@ -18,8 +19,8 @@ describe "cars/show" do
   it "renders attributes in <p>" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(//)
-    rendered.should match(//)
+    rendered.should match(/MakerName/)
+    rendered.should match(/CarName/)
     rendered.should match(/Grade1/)
     rendered.should match(/Grade2/)
     rendered.should match(/1/)

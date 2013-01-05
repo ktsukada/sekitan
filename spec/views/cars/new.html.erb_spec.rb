@@ -3,8 +3,7 @@ require 'spec_helper'
 describe "cars/new" do
   before(:each) do
     assign(:car, stub_model(Car,
-      :maker => nil,
-      :car_name => nil,
+      :car_name => stub_model(CarName),
       :grade1 => "MyString",
       :grade2 => "MyString",
       :price => 1,
@@ -20,8 +19,7 @@ describe "cars/new" do
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => cars_path, :method => "post" do
-      assert_select "input#car_maker", :name => "car[maker]"
-      assert_select "input#car_car_name", :name => "car[car_name]"
+      assert_select "select#car_car_name_id", :name => "car[car_name_id]"
       assert_select "input#car_grade1", :name => "car[grade1]"
       assert_select "input#car_grade2", :name => "car[grade2]"
       assert_select "input#car_price", :name => "car[price]"

@@ -27,16 +27,17 @@ describe CarsController do
     {}
   end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # CarsController. Be sure to keep this updated too.
+    # This should return the minimal set of values that should be in the session
+    # in order to pass any filters (e.g. authentication) defined in
+    # CarsController. Be sure to keep this updated too.
   def valid_session
     {}
   end
 
   describe "GET index" do
     it "assigns all cars as @cars" do
-      car = Car.create! valid_attributes
+      #car = Car.create! valid_attributes
+      car = FactoryGirl.create(:car)
       get :index, {}, valid_session
       assigns(:cars).should eq([car])
     end

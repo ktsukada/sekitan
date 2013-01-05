@@ -4,10 +4,12 @@ describe "makers/index" do
   before(:each) do
     assign(:makers, [
       stub_model(Maker,
-        :name => "Name"
+        :name => "Name",
+        :created_at => Time.now
       ),
       stub_model(Maker,
-        :name => "Name"
+        :name => "Name",
+        :created_at => Time.now
       )
     ])
   end

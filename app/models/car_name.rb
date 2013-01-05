@@ -6,4 +6,5 @@ class CarName < ActiveRecord::Base
 
   belongs_to :maker
   has_many :cars
+
 end

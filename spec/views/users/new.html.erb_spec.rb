@@ -7,15 +7,6 @@ describe "users/new" do
       :first_name => "MyString",
       :last_name => "MyString",
       :email => "MyString",
-      :encrypted_password => "MyString",
-      :reset_password_token => "MyString",
-      :sign_in_count => "MyString",
-      :current_sign_in_up => "MyString",
-      :confirmation_token => "MyString",
-      :unconfirmed_email => "MyString",
-      :failed_attempts => 1,
-      :unlock_token => "MyString",
-      :authentication_token => "MyString"
     ).as_new_record)
   end
 
@@ -28,15 +19,6 @@ describe "users/new" do
       assert_select "input#user_first_name", :name => "user[first_name]"
       assert_select "input#user_last_name", :name => "user[last_name]"
       assert_select "input#user_email", :name => "user[email]"
-      assert_select "input#user_encrypted_password", :name => "user[encrypted_password]"
-      assert_select "input#user_reset_password_token", :name => "user[reset_password_token]"
-      assert_select "input#user_sign_in_count", :name => "user[sign_in_count]"
-      assert_select "input#user_current_sign_in_up", :name => "user[current_sign_in_up]"
-      assert_select "input#user_confirmation_token", :name => "user[confirmation_token]"
-      assert_select "input#user_unconfirmed_email", :name => "user[unconfirmed_email]"
-      assert_select "input#user_failed_attempts", :name => "user[failed_attempts]"
-      assert_select "input#user_unlock_token", :name => "user[unlock_token]"
-      assert_select "input#user_authentication_token", :name => "user[authentication_token]"
     end
   end
 end

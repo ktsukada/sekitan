@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(:version => 20121216052517) do
   end
 
   create_table "cars", :force => true do |t|
-    t.integer  "maker_id"
     t.integer  "car_name_id"
     t.string   "grade1"
     t.string   "grade2"
@@ -48,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20121216052517) do
   create_table "customers", :force => true do |t|
     t.string   "name"
     t.integer  "staff_id"
-    t.date     "tel_no"
+    t.string   "tel_no"
     t.string   "address1"
     t.string   "address2"
     t.date     "birth_day"
@@ -76,7 +75,9 @@ ActiveRecord::Schema.define(:version => 20121216052517) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "staffs", :force => true do |t|
+    t.integer  "user_id"
     t.integer  "store_id"
+    t.string   "staff_no"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

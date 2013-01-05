@@ -1,6 +1,6 @@
 <div class="nav-collapse">
 	<ul class="nav" >
-		<li class='active'>
+		<li class="<%= 'active' if current_page? root_path %>">
 			<%= link_to "Home", root_path %>
 		</li>
 		<li>
@@ -8,6 +8,16 @@
 		</li>
 		<li>
 			<%= link_to "提案書", root_path %>
+		</li>
+		<li class="<%= 'active' if current_page? makers_path or
+		                         current_page? car_names_path or
+		                         current_page? cars_path or
+														 current_page? companies_path or
+														 current_page? stores_path or
+														 current_page? staffs_path or
+														 current_page? customers_path or
+														 current_page? users_path %>">
+			<%= link_to "管理", makers_path %>
 		</li>
 	</ul>
 	<p class="navbar-text pull-right">

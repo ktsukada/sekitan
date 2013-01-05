@@ -5,11 +5,13 @@ describe "car_names/index" do
     assign(:car_names, [
       stub_model(CarName,
         :maker_id => "Maker",
-        :name => "Name"
+        :name => "Name",
+        :created_at => Time.now
       ),
       stub_model(CarName,
         :maker_id => "Maker",
-        :name => "Name"
+        :name => "Name",
+        :created_at => Time.now
       )
     ])
   end

@@ -7,6 +7,6 @@ FactoryGirl.define do
     tel_no "MyString"
     address1 "MyString"
     address2 "MyString"
-    birth_day "2013-01-04"
+    birth_day "2013-01-05"
   end
 end

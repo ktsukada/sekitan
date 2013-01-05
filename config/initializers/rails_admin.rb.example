@@ -1,4 +1,4 @@
-# RailsAdmin config file. Generated on December 23, 2012 18:46
+# RailsAdmin config file. Generated on January 04, 2013 04:00
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
@@ -27,10 +27,10 @@ RailsAdmin.config do |config|
   # config.default_items_per_page = 20
 
   # Exclude specific models (keep the others):
-  # config.excluded_models = ['Car', 'CarName', 'Company', 'Customer', 'Function', 'Maker', 'Role', 'Staff', 'Store', 'User']
+  # config.excluded_models = ['Car', 'CarName', 'Company', 'Customer', 'Maker', 'Staff', 'Store', 'User']
 
   # Include specific models (exclude the others):
-  # config.included_models = ['Car', 'CarName', 'Company', 'Customer', 'Function', 'Maker', 'Role', 'Staff', 'Store', 'User']
+  # config.included_models = ['Car', 'CarName', 'Company', 'Customer', 'Maker', 'Staff', 'Store', 'User']
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
@@ -68,15 +68,17 @@ RailsAdmin.config do |config|
   #     configure :id, :integer 
   #     configure :maker_id, :integer         # Hidden 
   #     configure :car_name_id, :integer         # Hidden 
-  #     configure :grade, :string 
+  #     configure :grade1, :string 
+  #     configure :grade2, :string 
   #     configure :price, :integer 
-  #     configure :saled_at, :date 
+  #     configure :sale_start_at, :date 
+  #     configure :sale_end_at, :date 
   #     configure :notes, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
   #     configure :image1, :string 
   #     configure :image2, :string 
   #     configure :image3, :string 
+  #     configure :created_at, :datetime 
+  #     configure :updated_at, :datetime 
 
   #   # Cross-section configuration:
 
@@ -153,7 +155,10 @@ RailsAdmin.config do |config|
 
   # config.model 'Company' do
 
-  #   # You can copy this to a 'rails_admin do ... end' block inside your company.rb model definition
+  #   # You can copy this to a '
+
+
+  ils_admin do ... end' block inside your company.rb model definition
 
   #   # Found associations:
 
@@ -163,10 +168,9 @@ RailsAdmin.config do |config|
 
   #     configure :id, :integer 
   #     configure :name, :string 
-  #     configure :address, :string 
+  #     configure :address1, :string 
+  #     configure :address2, :string 
   #     configure :tel_no, :string 
-  #     configure :start_at, :date 
-  #     configure :end_at, :date 
   #     configure :created_at, :datetime 
   #     configure :updated_at, :datetime 
 
@@ -211,52 +215,10 @@ RailsAdmin.config do |config|
   #     configure :id, :integer 
   #     configure :name, :string 
   #     configure :staff_id, :integer         # Hidden 
-  #     configure :first_year, :date 
-  #     configure :run, :integer 
-  #     configure :shaken, :date 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-
-  #   # Cross-section configuration:
-
-  #     # object_label_method :name     # Name of the method called for pretty printing an *instance* of ModelName
-  #     # label 'My model'              # Name of ModelName (smartly defaults to ActiveRecord's I18n API)
-  #     # label_plural 'My models'      # Same, plural
-  #     # weight 0                      # Navigation priority. Bigger is higher.
-  #     # parent OtherModel             # Set parent model for navigation. MyModel will be nested below. OtherModel will be on first position of the dropdown
-  #     # navigation_label              # Sets dropdown entry's name in navigation. Only for parents!
-
-  #   # Section specific configuration:
-
-  #     list do
-  #       # filters [:id, :name]  # Array of field names which filters should be shown by default in the table header
-  #       # items_per_page 100    # Override default_items_per_page
-  #       # sort_by :id           # Sort column (default is primary key)
-  #       # sort_reverse true     # Sort direction (default is true for primary key, last created first)
-  #     end
-  #     show do; end
-  #     edit do; end
-  #     export do; end
-  #     # also see the create, update, modal and nested sections, which override edit in specific cases (resp. when creating, updating, modifying from another model in a popup modal or modifying from another model nested form)
-  #     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
-  #     # using `field` instead of `configure` will exclude all other fields and force the ordering
-  # end
-
-
-  ###  Function  ###
-
-  # config.model 'Function' do
-
-  #   # You can copy this to a 'rails_admin do ... end' block inside your function.rb model definition
-
-  #   # Found associations:
-
-  #     configure :roles, :has_many_association 
-
-  #   # Found columns:
-
-  #     configure :id, :integer 
-  #     configure :name, :string 
+  #     configure :tel_no, :date 
+  #     configure :address1, :string 
+  #     configure :address2, :string 
+  #     configure :birth_day, :date 
   #     configure :created_at, :datetime 
   #     configure :updated_at, :datetime 
 
@@ -330,50 +292,6 @@ RailsAdmin.config do |config|
   # end
 
 
-  ###  Role  ###
-
-  # config.model 'Role' do
-
-  #   # You can copy this to a 'rails_admin do ... end' block inside your role.rb model definition
-
-  #   # Found associations:
-
-  #     configure :staff, :belongs_to_association 
-
-  #   # Found columns:
-
-  #     configure :id, :integer 
-  #     configure :staff_id, :integer         # Hidden 
-  #     configure :function_id, :integer 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-
-  #   # Cross-section configuration:
-
-  #     # object_label_method :name     # Name of the method called for pretty printing an *instance* of ModelName
-  #     # label 'My model'              # Name of ModelName (smartly defaults to ActiveRecord's I18n API)
-  #     # label_plural 'My models'      # Same, plural
-  #     # weight 0                      # Navigation priority. Bigger is higher.
-  #     # parent OtherModel             # Set parent model for navigation. MyModel will be nested below. OtherModel will be on first position of the dropdown
-  #     # navigation_label              # Sets dropdown entry's name in navigation. Only for parents!
-
-  #   # Section specific configuration:
-
-  #     list do
-  #       # filters [:id, :name]  # Array of field names which filters should be shown by default in the table header
-  #       # items_per_page 100    # Override default_items_per_page
-  #       # sort_by :id           # Sort column (default is primary key)
-  #       # sort_reverse true     # Sort direction (default is true for primary key, last created first)
-  #     end
-  #     show do; end
-  #     edit do; end
-  #     export do; end
-  #     # also see the create, update, modal and nested sections, which override edit in specific cases (resp. when creating, updating, modifying from another model in a popup modal or modifying from another model nested form)
-  #     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
-  #     # using `field` instead of `configure` will exclude all other fields and force the ordering
-  # end
-
-
   ###  Staff  ###
 
   # config.model 'Staff' do
@@ -383,18 +301,12 @@ RailsAdmin.config do |config|
   #   # Found associations:
 
   #     configure :store, :belongs_to_association 
-  #     configure :roles, :has_many_association 
   #     configure :customers, :has_many_association 
 
   #   # Found columns:
 
   #     configure :id, :integer 
   #     configure :store_id, :integer         # Hidden 
-  #     configure :login_id, :string 
-  #     configure :password, :password         # Hidden 
-  #     configure :name, :string 
-  #     configure :birthday, :date 
-  #     configure :tel_no, :string 
   #     configure :created_at, :datetime 
   #     configure :updated_at, :datetime 
 
@@ -440,7 +352,8 @@ RailsAdmin.config do |config|
   #     configure :id, :integer 
   #     configure :company_id, :integer         # Hidden 
   #     configure :name, :string 
-  #     configure :address, :string 
+  #     configure :address1, :string 
+  #     configure :address2, :string 
   #     configure :tel_no, :string 
   #     configure :created_at, :datetime 
   #     configure :updated_at, :datetime 
@@ -479,11 +392,14 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-
+  #     configure :staff, :has_one_association 
 
   #   # Found columns:
 
   #     configure :id, :integer 
+  #     configure :account, :string 
+  #     configure :first_name, :string 
+  #     configure :last_name, :string 
   #     configure :email, :string 
   #     configure :password, :password         # Hidden 
   #     configure :password_confirmation, :password         # Hidden 
@@ -495,6 +411,14 @@ RailsAdmin.config do |config|
   #     configure :last_sign_in_at, :datetime 
   #     configure :current_sign_in_ip, :string 
   #     configure :last_sign_in_ip, :string 
+  #     configure :confirmation_token, :string 
+  #     configure :confirmed_at, :datetime 
+  #     configure :confirmation_sent_at, :datetime 
+  #     configure :unconfirmed_email, :string 
+  #     configure :failed_attempts, :integer 
+  #     configure :unlock_token, :string 
+  #     configure :locked_at, :datetime 
+  #     configure :authentication_token, :string 
   #     configure :created_at, :datetime 
   #     configure :updated_at, :datetime 
 

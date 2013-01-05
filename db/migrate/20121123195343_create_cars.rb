@@ -1,7 +1,6 @@
 class CreateCars < ActiveRecord::Migration
   def change
     create_table :cars do |t|
-      t.references :maker
       t.references :car_name
       t.string :grade1
       t.string :grade2
