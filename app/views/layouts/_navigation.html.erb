@@ -22,10 +22,13 @@
 	</ul>
 	<p class="navbar-text pull-right">
 	  <% if user_signed_in? %>
-        	<%=current_user.account %>. 
-	    <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+	    <%= link_to(destroy_user_session_path, :method =>'delete') do %>
+	    	<i class="icon-off"></i>ログアウト
+	   	<% end %>
 	  <% else %>
-	    <%= link_to('Login', new_user_session_path) %>
+	    <%= link_to(new_user_session_path) do %>
+ 	    	<i class="icon-off"></i>ログイン
+	   	<% end %>
 	  <% end %>
 	          </p>
 

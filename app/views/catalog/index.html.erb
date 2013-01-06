@@ -1,25 +1,52 @@
-<h3>新車カタログ</h3>
-<hr>
-
-<table class='table table-hover table-striped'>
-  <tr>
-    <th>イメージ</th>
-    <th>メーカー</th>
-    <th>車種名</th>
-    <th>グレード</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @cars.each do |car| %>
-  <tr class="<%=cycle('list_line_odd', 'list_line_even')  %>">
-    <td><%= image_tag car.image1, :class => 'list_image' %></td>
-    <td><%= car.maker.name %></td> 
-    <td><%= car.car_name.name %></td>
-    <td><%= car.grade %></td>
-    <td><%= link_to 'Show', car %><br>
-  </tr>
-<% end %>
+<%- model_class = Car -%>
+<div class="page-header">
+  <h1><%=t 'function.sub.catalog' %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:maker) %></th>
+      <th><%= model_class.human_attribute_name(:car_name_id) %></th>
+      <th><%= model_class.human_attribute_name(:grade1) %></th>
+      <th><%= model_class.human_attribute_name(:grade2) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:sale_start_at) %></th>
+      <th><%= model_class.human_attribute_name(:sale_end_at) %></th>
+      <th><%= model_class.human_attribute_name(:notes) %></th>
+      <th><%= model_class.human_attribute_name(:image1) %></th>
+      <th><%= model_class.human_attribute_name(:image2) %></th>
+      <th><%= model_class.human_attribute_name(:image3) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= link_to car.id, car_path(car) %></td>
+        <td><%= car.car_name.maker.name %></td>
+        <td><%= car.car_name.name %></td>
+        <td><%= car.grade1 %></td>
+        <td><%= car.grade2 %></td>
+        <td><%= car.price %></td>
+        <td><%= car.sale_start_at %></td>
+        <td><%= car.sale_end_at %></td>
+        <td><%= car.notes %></td>
+        <td><%= car.image1 %></td>
+        <td><%= car.image2 %></td>
+        <td><%= car.image3 %></td>
+        <td><%=l car.created_at %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      "#", :class => 'btn btn-mini' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-  <%= paginate @cars %>  
+<%= paginate @cars %>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_car_path,
+            :class => 'btn btn-primary' %>

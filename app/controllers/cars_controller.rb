@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all
+    @cars = Car.page(params[:page]).per(20)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -2,19 +2,13 @@ class CarNamesController < ApplicationController
   # GET /car_names
   # GET /car_names.json
   def index
-    @maker = Maker.all
+    @car_names = CarName.page(params[:page]).per(20)
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @car_names }
     end
   end
-
- def search  
-    @car_names = Maker.find(params[:makerid]).car_names
-    @car_names = @car_names.where("name like ?", "%#{params[:words]}%") if params[:words].present?
-    @car_names = @car_names.page(params[:page]).per(20)
-end
 
   # GET /car_names/1
   # GET /car_names/1.json
@@ -31,7 +25,6 @@ end
   # GET /car_names/new.json
   def new
     @car_name = CarName.new
-    @maker = Maker.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,17 +33,14 @@ end
   end
 
   # GET /car_names/1/edit
-  def edit  
+  def edit
     @car_name = CarName.find(params[:id])
-    @maker = Maker.all
-
   end
 
   # POST /car_names
   # POST /car_names.json
   def create
     @car_name = CarName.new(params[:car_name])
-    @maker = Maker.all
 
     respond_to do |format|
       if @car_name.save

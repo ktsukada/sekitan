@@ -2,7 +2,7 @@ class MakersController < ApplicationController
   # GET /makers
   # GET /makers.json
   def index
-    @makers = Maker.all
+    @makers = Maker.page(params[:page]).per(20)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -3,11 +3,10 @@
 
 FactoryGirl.define do
   factory :car do
-    maker nil
-    car_name nil
-    grade1 "MyString"
-    grade2 "MyString"
-    price 1
+    car_name_id 1 
+    grade1 "グレード１"
+    grade2 "グレード２"
+    price 1000
     sale_start_at "2013-01-04"
     sale_end_at "2013-01-04"
     notes "MyString"
@@ -18,27 +17,43 @@ FactoryGirl.define do
 
   sequence(:grade_string) { |n| "グレード#{n}" }
 
-  factory :pajero_car  , :class => Car do
-    maker_id 1
+  factory :car_1  , :class => Car do
     car_name_id 1
-    grade { FactoryGirl.generate(:grade_string) }
+    grade1 "グレード１"
+    grade2 "グレード２"
+    price 1000
+    sale_start_at "2013-01-04"
+    sale_end_at "2013-01-04"
+    notes "MyString"
+    image1 "MyString"
+    image2 "MyString"
+    image3 "MyString"
   end
 
-    factory :delica_car  , :class => Car do
-    maker_id 1
+  factory :car_2  , :class => Car do
     car_name_id 2
-    grade { FactoryGirl.generate(:grade_string) }
+    grade1 "グレード１"
+    grade2 "グレード２"
+    price 1000
+    sale_start_at "2013-01-04"
+    sale_end_at "2013-01-04"
+    notes "MyString"
+    image1 "MyString"
+    image2 "MyString"
+    image3 "MyString"
   end
 
-    factory :prius_car  , :class => Car do
-    maker_id 2
+  factory :car_3  , :class => Car do
     car_name_id 3
-    grade { FactoryGirl.generate(:grade_string) }
+    grade1 "グレード１"
+    grade2 "グレード２"
+    price 1000
+    sale_start_at "2013-01-04"
+    sale_end_at "2013-01-04"
+    notes "MyString"
+    image1 "MyString"
+    image2 "MyString"
+    image3 "MyString"
   end
 
-    factory :insight_car  , :class => Car do
-    maker_id 2
-    car_name_id 5
-    grade { FactoryGirl.generate(:grade_string) }
-  end
 end

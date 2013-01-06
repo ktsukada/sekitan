@@ -12,32 +12,23 @@ require 'factory_girl'
 Maker.delete_all
 CarName.delete_all
 Car.delete_all
-Role.delete_all
 
 # maker
-FactoryGirl.create(:mitsubishi)
-FactoryGirl.create(:toyota)
-FactoryGirl.create(:honda)
+FactoryGirl.create(:maker_1)
+FactoryGirl.create(:maker_2)
+FactoryGirl.create(:maker_3)
+FactoryGirl.create_list(:maker,20)
+
 
 # car_name
-FactoryGirl.create(:pajero)
-FactoryGirl.create(:delica)
-FactoryGirl.create(:prius)
-FactoryGirl.create(:alion)
-FactoryGirl.create(:insight)
-FactoryGirl.create_list(:mitsubishi_carname,5)
-FactoryGirl.create_list(:toyota_carname,5)
-FactoryGirl.create_list(:honda_carname,5)
+FactoryGirl.create_list(:car_name_1,20)
+FactoryGirl.create_list(:car_name_2,20)
+FactoryGirl.create_list(:car_name_3,20)
+FactoryGirl.create_list(:car_name,20)
 
 # car
-FactoryGirl.create_list(:pajero_car,30)
-FactoryGirl.create_list(:delica_car,30)
-FactoryGirl.create_list(:prius_car,30)
-FactoryGirl.create_list(:insight_car,30)
-
-# role
-FactoryGirl.create(:role_system_admin)
-FactoryGirl.create(:role_admin)
-FactoryGirl.create(:role_headquarter)
-FactoryGirl.create(:role_staff)
+FactoryGirl.create_list(:car_1,20)
+FactoryGirl.create_list(:car_2,20)
+FactoryGirl.create_list(:car_3,20)
+FactoryGirl.create_list(:car,50)
 

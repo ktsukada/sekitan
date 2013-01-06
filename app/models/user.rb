@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_one :staff
 
   def full_name
-    last_name + " " + first_name
+    name = last_name
+    name << " " << first_name if first_name.present?
   end
 end

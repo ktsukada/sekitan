@@ -1,5 +1,7 @@
 Sekitan::Application.routes.draw do  
 
+  resources :car_names
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :users

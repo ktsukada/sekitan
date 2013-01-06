@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "car_names/new" do
   before(:each) do
     assign(:car_name, stub_model(CarName,
-      :maker_id => "MyString",
+      :maker => stub_model(Maker),
       :name => "MyString"
     ).as_new_record)
   end

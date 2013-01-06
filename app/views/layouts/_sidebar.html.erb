@@ -7,12 +7,28 @@
 
 <ul class="nav nav-list">
   <li class="nav-header">機能</li>
-  <li class="<%= 'active' if current_page? makers_path %>"><%= link_to "Maker", makers_path %></li>
-  <li class="<%= 'active' if current_page? car_names_path %>"><%= link_to "CarName", car_names_path %></li>
-  <li class="<%= 'active' if current_page? cars_path %>"><%= link_to "Car", cars_path %></li>
-  <li class="<%= 'active' if current_page? companies_path %>"><%= link_to "Company", companies_path %></li>
-  <li class="<%= 'active' if current_page? stores_path %>"><%= link_to "Store", stores_path %></li>
-  <li class="<%= 'active' if current_page? staffs_path %>"><%= link_to "Staff", staffs_path %></li>
-  <li class="<%= 'active' if current_page? customers_path %>"><%= link_to "Customer", customers_path %></li>
-  <li class="<%= 'active' if current_page? users_path %>"><%= link_to "User", users_path %></li>
+  <li class="<%= 'active' if current_page? makers_path %>">
+    <%= link_to Maker.model_name.human, makers_path %>
+  </li>
+  <li class="<%= 'active' if current_page? car_names_path %>">
+    <%= link_to CarName.model_name.human, car_names_path %>
+  </li>
+  <li class="<%= 'active' if current_page? cars_path %>">
+    <%= link_to Car.model_name.human, cars_path %>
+  </li>
+  <li class="<%= 'active' if current_page? companies_path %>">
+    <%= link_to Company.model_name.human, companies_path %>
+  </li>
+  <li class="<%= 'active' if current_page? stores_path %>">
+    <%= link_to Store.model_name.human, stores_path %>
+  </li>
+  <li class="<%= 'active' if current_page? staffs_path %>">
+    <%= link_to Staff.model_name.human, staffs_path %>
+  </li>
+  <li class="<%= 'active' if current_page? customers_path %>">
+    <%= link_to Customer.model_name.human, customers_path %>
+  </li>
+  <li class="<%= 'active' if current_page? users_path %>">
+    <%= link_to User.model_name.human, users_path %>
+  </li>
 </ul>

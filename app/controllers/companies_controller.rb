@@ -2,7 +2,7 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    @companies = Company.page(params[:page]).per(20)
 
     respond_to do |format|
       format.html # index.html.erb

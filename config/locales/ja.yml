@@ -195,3 +195,57 @@ ja:
   activerecord:
     errors:
       <<: *errors
+    models:
+      car_name: 車種名
+      car: グレード
+      company: 会社
+      customer: 顧客
+      maker: メーカー
+      staff: スタッフ
+      store: 営業店
+      user: ユーザー
+    attributes:
+      user:
+        account: アカウント
+        first_name: 名
+        last_name: 氏
+        full_name: 氏名
+        email: Eメール
+      car_name:
+        name: 車種名
+      car:
+        grade1: グレード１
+        grade2: グレード２
+        price: 本体価格
+        sale_start_at: 発売始期
+        sale_end_at: 発売終期
+        notes: 備考
+        image1: イメージ１
+        image2: イメージ２
+        image3: イメージ３
+      company:
+        name: 社名
+        address1: 住所１
+        address2: 住所２
+        tel_no: TEL
+      customer:
+        name: 顧客名
+        tel_no: TEL
+        address1: 住所１
+        address2: 住所２
+        birth_day: 生年月日
+      Maker:
+        name: メーカー名
+  function:
+    home: ホーム
+    catalog: カタログ
+    proposal: 提案
+    admin: 管理
+    sysadmin: システム管理
+    sub:
+      catalog: カタログ
+      compare: 比較
+      reserve: 印刷予約
+      proposal_car: 提案車種の設定
+      template: テンプレート登録
+

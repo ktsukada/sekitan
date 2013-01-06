@@ -1,15 +1,40 @@
-<h3>車種名</h3>
-<hr>
-<%= form_tag({:action => 'search', :page => 1 }, :remote => true, :class => 'form_search' ) do %> 
-<%= select_tag 'makerid', options_from_collection_for_select(@maker, :id, :name) %>
-<%= text_field_tag :words, '',:class => 'search-query', :placeholder => '車種名'%>
-<%= submit_tag '検索' , :class => 'btn btn-info' %>
-<% end %>
-  
-<div id="search-result"></div>
-
-<br />
-
-<div class="form-actions">
-	<%= link_to '車種名を追加', new_car_name_path, :class => 'btn btn-primary' %>
+<%- model_class = CarName -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:maker_id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @car_names.each do |car_name| %>
+      <tr>
+        <td><%= link_to car_name.id, car_name_path(car_name) %></td>
+        <td><%= car_name.maker.name %></td>
+        <td><%= car_name.name %></td>
+        <td><%=l car_name.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_car_name_path(car_name), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      car_name_path(car_name),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @car_names %>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_car_name_path,
+            :class => 'btn btn-primary' %>
