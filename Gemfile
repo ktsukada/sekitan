@@ -31,6 +31,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
 gem 'simple_form'
 gem 'factory_girl_rails'
 gem 'jquery-rails'
