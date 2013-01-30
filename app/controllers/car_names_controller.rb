@@ -1,4 +1,7 @@
-class CarNamesController < ApplicationController
+class CarNamesController < ApplicationController 
+  # before_filter :authenticate_user!, :except => :index 
+  before_filter :authenticate_user!, :except => 'index'
+
   # GET /car_names
   # GET /car_names.json
   def index
