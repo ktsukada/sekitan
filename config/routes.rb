@@ -1,6 +1,7 @@
 Sekitan::Application.routes.draw do  
 
   resources :car_names
+get "car_names/list"
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
@@ -9,15 +10,17 @@ Sekitan::Application.routes.draw do
   get "catalog/index"
 
   get "top/index"
+  get "top/get_json_one"
+  get "top/get_json_all"
 
   resources :cars
 
-  resources :car_names do
-    collection do 
-      post :search
-      get :search
-    end
-  end
+  # resources :car_names do
+  #   collection do 
+  #     post :search
+  #     get :search
+  #   end
+  # end
 
   resources :makers
 
