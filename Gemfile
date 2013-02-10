@@ -8,13 +8,13 @@ gem 'rails', '3.2.11'
 #gem 'sqlite3' 
 
 group :development do
- # gem 'sqlite3' 
+  gem 'sqlite3' 
   gem 'debugger'
   gem 'rails-erd'
   gem 'twitter-bootstrap-rails'
 end
 group :test do
-  #gem 'sqlite3'  
+  gem 'sqlite3'  
 end
 group :production do
    gem 'pg'
