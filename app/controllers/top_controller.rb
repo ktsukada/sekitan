@@ -27,7 +27,7 @@ class TopController < ApplicationController
         :meta => {
           :status => 200
         },
-        :data => @car_names.to_json
+        :data => @car_names
       }    
     }
     render :json => json
